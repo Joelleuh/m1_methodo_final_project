@@ -1,9 +1,11 @@
-name: Actions
+name: Test actions
 on: [push]
 jobs:
     test_actions:
       runs-on: ubuntu-latest
       steps:
+        - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+        - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
         - uses: actions/checkout@v2
         - name: Docker login
           env:
@@ -16,10 +18,10 @@ jobs:
             pytest
         - name: Build docker image
           run: 
-            docker build -t test .
+            docker build -t test_final_project .
         - name: Run docker image
-          run: docker run test
+          run: docker run test_final_project
         - name: Docker tag
-          run: docker tag test:latest joelleynov/test:test_image
+          run: docker tag test_final_project:latest joelleynov/m1_methodo_final_project:test_final_project
         - name: Docker push
-          run: docker push joelleynov/test:test_image
+          run: docker push joelleynov/m1_methodo_final_project:test_final_project
