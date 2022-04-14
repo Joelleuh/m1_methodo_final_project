@@ -1,0 +1,25 @@
+name: Actions
+on: [push]
+jobs:
+    test_actions:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Docker login
+          env:
+            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        - name: Run tests
+          run: |
+            pip install pytest
+            pytest
+        - name: Build docker image
+          run: 
+            docker build -t test .
+        - name: Run docker image
+          run: docker run test
+        - name: Docker tag
+          run: docker tag test:latest joelleynov/test:test_image
+        - name: Docker push
+          run: docker push joelleynov/test:test_image
