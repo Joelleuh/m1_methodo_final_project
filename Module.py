@@ -15,7 +15,6 @@ class Person:
         self.life_points += amount
         
     def get_life_points(self):
-        
         return self.life_points
 
 class Wizard(Person):
@@ -27,9 +26,6 @@ class Wizard(Person):
         person.life_points -= 15
         return person
         
-        
 class HealthPotion:
-    
     def was_used_by(person):
-        
         person.gained_life_points(10)
