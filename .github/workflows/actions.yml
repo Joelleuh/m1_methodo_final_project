@@ -14,6 +14,7 @@ jobs:
           run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         - name: Run tests
           run: |
+            pip install numpy
             pip install pytest
             pytest
         - name: Build docker image
