@@ -1,6 +1,8 @@
 from Module import Person, Wizard, HealthPotion
 from main import *
 
+# TESTS UNITAIRES SUR LES CLASSES
+
 def test_Person():
     user_1 = Person("Hero")
     user_3 = Person("Lamba")
@@ -65,6 +67,8 @@ def test_HealthPotion():
     assert user_1.is_dead() == False
 
 
+
+# TESTS INTEGRATIONS
 
 def test_while1():
     #Test avec while, Person hit Wizard (80-10*X)
