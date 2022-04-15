@@ -136,7 +136,7 @@ def test_while_potion1():
 #def test_while_potion2():
 #    user_1 = Person("Hero")
 #    user_2 = Wizard("Wizard")
-    #Test avec while + potion, Person hit Wizard (80-10*X), Wizard boit potion(80+10*X)
+#     Test avec while + potion, Person hit Wizard (80-10*X), Wizard boit potion(80+10*X)
 #    while user_1.is_dead() == False and user_2.is_dead() == False:
 #        nb2 = 1
 #        if nb2 == 1 :
