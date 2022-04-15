@@ -2,6 +2,7 @@ from Module import Person, Wizard, HealthPotion
 from main import *
 
 
+
 # TESTS UNITAIRES SUR LES CLASSES
 
 def test_Person():
